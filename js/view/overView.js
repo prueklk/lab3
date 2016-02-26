@@ -4,7 +4,7 @@ var OverView = function(container, model){
 	
 	var textString = "";
 	
-	textString += "<div class=\"container row\" id=\"instructions\">"+
+	textString += "<div id=\"instructions\">"+
 		"<div class=\"col-md-12\" id=\"dinnerOverview\">"+
 			"<div class=\"col-md-6\">"+
 				"<h3>My Dinner: <span id=\"numberOfGuests\"/></h3>"+
@@ -13,11 +13,14 @@ var OverView = function(container, model){
 				"<button id=\"backButton\" class=\"btn\">Go back and edit dinner</button>"+
 			"</div>"+
 		"</div>"+
-		"<div  id=\"preparationView\">"+
-		"</div>"+"</div>"+
-		"<div id=\"overviewPics\">"+
+		//"<div id=\"preparationView\">"+
+		//"</div>"+
 		"</div>"+
-		'<div class="container row center"><button class="btn" id="printButton">Print Full Recipe</button></div>';
+		"<div id=\"overviewPics\" class=\"col-md-12 center\">"+
+		"</div>"+
+		'<div class="row">'+
+		'<div class="col-md-12 center"><button class="btn" id="printButton">Print Full Recipe</button></div>'+
+		"</div>";
 	
 	container.html(textString);
 	
@@ -30,7 +33,7 @@ var OverView = function(container, model){
 		this.overviewPics = container.find("#overviewPics");
 
 		var fullMenu = model.getFullMenu();
-		var foodDetailTxt ='<div class="container row center">';
+		var foodDetailTxt ='<div class="imgInstruction">';
 		
 		// function foodClick(){
 		// 	console.log("foodClick");
@@ -42,7 +45,7 @@ var OverView = function(container, model){
 									"<div class=\"thumbnail\">"+
 										"<img src=\"images/"+fullMenu[i].image+"\" id=\""+fullMenu[i].name +"\" class=\"foodPics\" style=\"width:128px;height:128px;\">"+
 										"<div class=\"caption\">"+
-										"<p><a href=\"#\" class=\"btn btn-primary\" role=\"button\" onclick=\""+this+"\">"+fullMenu[i].name+"</a></p>"+
+										"<p><h4>"+fullMenu[i].name+"</h4></p>"+
 										'<p class="costColor">SEK '+model.getFoodPrice(fullMenu[i].id)+'</p>'+
 								"</div></div></div>";
 
@@ -50,9 +53,9 @@ var OverView = function(container, model){
 		
 		foodDetailTxt += "</div>";
 
-		foodDetailTxt += '<hr class="blackLine">'+
-						'<div class="container row center costColor"><h4>Total price: SEK '+model.getTotalMenuPrice()+'</h4></div>'+
-						'<hr class="blackLine">';
+		foodDetailTxt += '<div class="col-md-12"><hr class="blackLine">'+
+						'<div class="costColor"><h4>Total price: SEK '+model.getTotalMenuPrice()+'</h4></div>'+
+						'<hr class="blackLine"></div>';
 
 		this.overviewPics.html(foodDetailTxt);
 	}

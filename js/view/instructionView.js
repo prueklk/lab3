@@ -4,7 +4,7 @@ var InstructionView = function(container, model){
 
 	var textString = "";
 	
-	textString += "<div class=\"container row\" id=\"instructions\">"+
+	textString += "<div id=\"instructions\">"+
 		"<div class=\"col-md-12\" id=\"dinnerOverview\">"+
 			"<div class=\"col-md-6\">"+
 				"<h3>My Dinner: <span id=\"numberOfGuests\"/></h3>"+
@@ -48,9 +48,9 @@ var InstructionView = function(container, model){
 
 			//console.log("fullMenu[i] = "+fullMenu[i]);
 			prepViewTxt += '<div class="row">'+
-							'<div class="col-md-6">'+
+							'<div class="col-md-6 imgInstruction">'+
 							'<div class="col-md-4">'+
-							'<img src="images/'+fullMenu[i].image+'" class="img-responsive">'+
+							'<img src="images/'+fullMenu[i].image+'" class="img-responsive" style="width:128px;height:128px;">'+
 							'</div>'+
 							'<div class="col-md-8">'+
 							'<h3>'+fullMenu[i].name+'</h3>'+

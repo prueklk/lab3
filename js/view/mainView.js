@@ -4,7 +4,7 @@ var MainView = function(container, model){
 	
 	string = "";
 	
-	string += "<div class=\"col-md-9\" id=\"picBox\">"+
+	string += "<div id=\"picBox\">"+
 			"<div id=\"dishDiv\">"+
 				"<h4>Select dish:</h4>"+
 				"<hr class=\"blackLine\">"+

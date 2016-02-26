@@ -4,18 +4,17 @@ var SelectedDishView = function(container, model){
 	
 	var textString = "";
 	
-	textString += "<div id=\"dishDetails\">"+
-			"<div id=\"selectedDishDetails\" class=\"col-md-5\">"+
-			//<button class="btn" id="backButton">Back to Select Dish</button>+
-			"</div>"+"<div id=\"ingredientsBox\" class=\"col-md-4\">"+
+	textString += "<div id=\"dishDetails\" class=\"row\">"+
+			"<div id=\"selectedDishDetails\" class=\"col-md-7\">"+
+			"</div>"+"<div id=\"ingredientsBox\" class=\"col-md-5\">"+
 			'<div id="tableHead"></div>'+
 			'<div><table id="tableContent" class="table">'+
 				"</table>"+
 			"</div>"+
-			"<div id=\"buttonDiv\" class=\"col-md-12\">"+"<button class=\"btn btn-block\" id=\"confirmDish\">Confirm Dish</button>"+"</div>"+
-			"</div>"+"</div>"+
-			'<div class=\"col-md-9 col-md-offset-3\"><button class="btn" id="backButton">Back to Select Dish</button></div>'+
-			"<div id=\"preparation\" class=\"col-md-9 col-md-offset-3\">"+
+			"<div id=\"buttonDiv\">"+"<button class=\"btn btn-block\" id=\"confirmDish\">Confirm Dish</button>"+"</div>"+
+			"</div>"+
+			'<div class=\"col-md-12\"><button class="btn" id="backButton">Back to Select Dish</button></div>'+"</div>"+
+			"<div id=\"preparation\" class=\"col-md-12\">"+
 				"<h2>Preparation</h2>"+
 				"<div id=\"prepDiv\">"+
 				"</div>"+

@@ -3,7 +3,7 @@ var SideMenuView = function(container, model){
 	
 	string = "";
 	
-	string += "<div id=\"exampleView\">"+
+	string += "<div class=\"blackBorder\">"+
 			"<div>"+
 				"<h4>My dinner</h4>"+
 				"<p>People: <span id=\"numberOfGuests\"/></span></p>"+
