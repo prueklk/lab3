@@ -4,7 +4,7 @@ var MainView = function(container, model){
 	
 	string = "";
 	
-	string += "<div class=\"col-md-10\" id=\"picBox\">"+
+	string += "<div class=\"col-md-9\" id=\"picBox\">"+
 			"<div id=\"dishDiv\">"+
 				"<h4>Select dish:</h4>"+
 				"<hr class=\"blackLine\">"+
@@ -67,17 +67,17 @@ var MainView = function(container, model){
 		}
 		//console.log(this.foodBtnArr);
 
-		 for(var k=0;k<this.foodBtnArr.length;k++){
-		 	//console.log(this.foodBtnArr[k]);
+		 // for(var k=0;k<this.foodBtnArr.length;k++){
+		 // 	//console.log(this.foodBtnArr[k]);
 		 	
-			 for(var l=0;l<this.foodBtnArr[k].length; l++){
-		 	 	//console.log(this.foodBtnArr[k][l]);
-	   			this.foodBtnArr[k][l].onclick = function(){
-	    			//console.log(this.id);//food id
-					model.addPicId(this.id);
-	    		}
-	  		}	
-		 }
+			//  for(var l=0;l<this.foodBtnArr[k].length; l++){
+		 // 	 	//console.log(this.foodBtnArr[k][l]);
+	  //  			this.foodBtnArr[k][l].onclick = function(){
+	  //   			//console.log(this.id);//food id
+			// 		model.addPicId(this.id);
+	  //   		}
+	  // 		}	
+		 // }
 
 
 	}
@@ -92,6 +92,7 @@ var MainView = function(container, model){
 		if (arg == "starter" || arg == "main dish" || arg == "dessert"){
 			this.updateType(arg);
 		}
+		
 	}
 	
 	//console.log("this.addObserver = mainView");

@@ -16,12 +16,15 @@ var OverView = function(container, model){
 		"<div  id=\"preparationView\">"+
 		"</div>"+"</div>"+
 		"<div id=\"overviewPics\">"+
-		"</div>";
+		"</div>"+
+		'<div class="container row center"><button class="btn" id="printButton">Print Full Recipe</button></div>';
 	
 	container.html(textString);
 	
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.numberOfGuests.html(model.getNumberOfGuests()+" people");
+	this.backButton = container.find("#backButton");
+	this.printButton = container.find("#printButton");
 
 	var addOverviewText = function (){
 		this.overviewPics = container.find("#overviewPics");
@@ -49,8 +52,7 @@ var OverView = function(container, model){
 
 		foodDetailTxt += '<hr class="blackLine">'+
 						'<div class="container row center costColor"><h4>Total price: SEK '+model.getTotalMenuPrice()+'</h4></div>'+
-						'<hr class="blackLine">'+
-						'<div class="container row center"><button class="btn" id="printButton">Print Full Recipe</button></div>';
+						'<hr class="blackLine">';
 
 		this.overviewPics.html(foodDetailTxt);
 	}

@@ -1,28 +1,28 @@
 var OverallStateCtrl = function(model){
-	var indexView = new IndexView ($("#indexView"), model);
-	var indexCtrl = new IndexCtrl(indexView, model);
+	this.indexView = new IndexView ($("#indexView"), model);
+	this.indexCtrl = new IndexCtrl(this.indexView, model);
 	
-	var sideMenuView = new SideMenuView($("#sideMenu"), model);
-	var sideMenuViewCtrl = new SideMenuViewCtrl(sideMenuView,model);
+	this.sideMenuView = new SideMenuView($("#sideMenuView"), model);
+	this.sideMenuViewCtrl = new SideMenuViewCtrl(this.sideMenuView,model);
 	
-	var mainView = new MainView($("#mainView"), model);
-	var mainViewCtrl = new MainViewCtrl(mainView,model);
+	this.mainView = new MainView($("#mainView"), model);
+	this.mainViewCtrl = new MainViewCtrl(this.mainView,model);
 	
-	var selectedDishView = new SelectedDishView($("#selectedDishView"), model);
-	var selectedDishViewCtrl = new SelectedDishViewCtrl(selectedDishView, model);
+	this.selectedDishView = new SelectedDishView($("#selectedDishView"), model);
+	this.selectedDishViewCtrl = new SelectedDishViewCtrl(this.selectedDishView, model);
 	
-	var overView = new OverView($("#overView"), model);
-	var overViewCtrl = new OverViewCtrl(OverView,model);
+	this.overView = new OverView($("#overView"), model);
+	this.overViewCtrl = new OverViewCtrl(this.overView,model);
 	
-	var instructionView = new InstructionView($("#instructionView"), model);
-	var instructionViewCtrl = new InstructionViewCtrl(instructionView, model);
+	this.instructionView = new InstructionView($("#instructionView"), model);
+	this.instructionViewCtrl = new InstructionViewCtrl(this.instructionView, model);
 
 
-	//indexView.container.hide();
-	sideMenuView.container.hide();
-	mainView.container.hide();
-	selectedDishView.container.hide();
-	overView.container.hide();
-	instructionView.container.hide();
+	//this.indexView.container.hide();
+	this.sideMenuView.container.hide();
+	this.mainView.container.hide();
+	this.selectedDishView.container.hide();
+	this.overView.container.hide();
+	this.instructionView.container.hide();
 
 }

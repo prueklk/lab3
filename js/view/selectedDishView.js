@@ -14,22 +14,27 @@ var SelectedDishView = function(container, model){
 			"</div>"+
 			"<div id=\"buttonDiv\" class=\"col-md-12\">"+"<button class=\"btn btn-block\" id=\"confirmDish\">Confirm Dish</button>"+"</div>"+
 			"</div>"+"</div>"+
+			'<div class=\"col-md-9 col-md-offset-3\"><button class="btn" id="backButton">Back to Select Dish</button></div>'+
 			"<div id=\"preparation\" class=\"col-md-9 col-md-offset-3\">"+
 				"<h2>Preparation</h2>"+
 				"<div id=\"prepDiv\">"+
 				"</div>"+
-		"</div>"
+		"</div>";
 		
 	container.html(textString);
 	
+	//console.log("CONTAINER");
+	//console.log(container);
 	
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.numberOfGuests.html(model.getNumberOfGuests()+" people");
 	
 	this.confirmDish = container.find("#confirmDish");
 	this.backButton = container.find("#backButton");
-	this.tableContent = container.find("#tableContent");
-	this.totalCostTwo = container.find("#totalCostTwo");
+	// this.tableContent = container.find("#tableContent");
+	// this.totalCostTwo = container.find("#totalCostTwo");
+
+	
 	
 	var dishInfo = function(){
 		
@@ -43,7 +48,7 @@ var SelectedDishView = function(container, model){
 							"<img src=\"images/"+pickedFood.image+"\" id=\""+pickedFood.name+"\" class=\"foodPics\" style=\"width:128px;height:128px;\">"+
 							"<div>"+ pickedFood.description+"</div>"
 		
-		foodDescription += '<br><button class="btn" id="backButton">Back to Select Dish</button>';
+		//foodDescription += '<br><button class="btn" id="backButton">Back to Select Dish</button>';
 
 		this.pickedFoodDiv.html(foodDescription);
 

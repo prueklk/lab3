@@ -1,5 +1,4 @@
 var SideMenuView = function(container, model){
-	
 	this.container = container; 
 	
 	string = "";
@@ -17,7 +16,7 @@ var SideMenuView = function(container, model){
 				"<div id=\"menuList\">"+
 				"</div>"+
 			"</div>"+
-			"<button id=\"#confirmButton\" class=\"btn\">Confirm Dinner</button>"+
+			"<button id=\"confirmButton\" class=\"btn\">Confirm Dinner</button>"+
 		"</div>";
 		
 	container.html(string);
@@ -26,6 +25,7 @@ var SideMenuView = function(container, model){
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
 	this.confirmDinner = container.find("#confirmButton");
+
 
 	this.menuList = container.find("#menuList");
 

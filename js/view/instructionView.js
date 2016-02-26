@@ -21,6 +21,7 @@ var InstructionView = function(container, model){
 	//this.overviewDiv = container.find("#dinnerOverview");
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.numberOfGuests.html(model.getNumberOfGuests()+" people");
+	this.backButton = container.find("#backButton");
 
 	var addInstructionText = function(){
 	

@@ -6,4 +6,10 @@ var SelectedDishViewCtrl = function(view, model) {
 		model.addDishToMenu(model.getPicId());
 	});
 	
+
+	view.backButton.click(function(){
+		//console.log("back");
+		overallStateCtrl.mainView.container.show();
+		overallStateCtrl.selectedDishView.container.hide();
+	});
 }
