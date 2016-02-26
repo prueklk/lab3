@@ -1,4 +1,4 @@
-var indexView = function(container, model){
+var IndexView = function(container, model){
 	
 	this.container = container; 
 	

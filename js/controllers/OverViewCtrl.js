@@ -1,2 +1,2 @@
-var overViewCtrl = function(view, model) {
+var OverViewCtrl = function(view, model) {
 }

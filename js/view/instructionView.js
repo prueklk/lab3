@@ -1,4 +1,4 @@
-var instructionView = function(container, model){
+var InstructionView = function(container, model){
 
 	this.container = container; 
 

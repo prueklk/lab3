@@ -1,2 +1,2 @@
-var instructionViewCtrl = function(view, model) {
+var InstructionViewCtrl = function(view, model) {
 }

@@ -1,4 +1,4 @@
-var sideMenuViewCtrl = function(view, model) {
+var SideMenuViewCtrl = function(view, model) {
  
 	view.plusButton.click(function(){
 		model.setNumberOfGuests(1);

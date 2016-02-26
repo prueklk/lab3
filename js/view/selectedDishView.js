@@ -1,4 +1,4 @@
-var selectedDishView = function(container, model){
+var SelectedDishView = function(container, model){
 	
 	this.container = container; 
 	
@@ -10,14 +10,9 @@ var selectedDishView = function(container, model){
 			"</div>"+"<div id=\"ingredientsBox\" class=\"col-md-4\">"+
 			'<div id="tableHead"></div>'+
 			'<div><table id="tableContent" class="table">'+
-				'</tbody><tfoot>'+
-				"<tr><td>Total cost</td>"+
-				"<td></td>"+
-				"<td>SEK</td>"+
-				"<td id=\"totalCostTwo\">"+"</td>"+
-				"</tr></tfoot></table>"+
+				"</table>"+
 			"</div>"+
-			"<div id=\"buttonDiv\" class=\"col-md-4\">"+"<button class=\"btn\" id=\"confirmDish\">Confirm Dish</button>"+"</div>"+
+			"<div id=\"buttonDiv\" class=\"col-md-12\">"+"<button class=\"btn btn-block\" id=\"confirmDish\">Confirm Dish</button>"+"</div>"+
 			"</div>"+"</div>"+
 			"<div id=\"preparation\" class=\"col-md-9 col-md-offset-3\">"+
 				"<h2>Preparation</h2>"+
@@ -74,11 +69,11 @@ var selectedDishView = function(container, model){
 		}
 
 		 ingredientTxt += '</tbody><tfoot>'+
-						 "<tr><td>Total cost</td>"+
-						 "<td></td>"+
+						 "<tr><td></td>"+
+						 "<td>Total cost</td>"+
 						 "<td>SEK</td>"+
 						 "<td>"+model.getFoodPrice(dishId)*model.getNumberOfGuests()+"</td>"+
-						 "</tr></tfoot></table>";
+						 "</tr></tfoot>";
 		
 		
 		//this.totalPriceIngr.html(model.getFoodPrice(dishId));

@@ -1,4 +1,4 @@
-var sideMenuView = function(container, model){
+var SideMenuView = function(container, model){
 	
 	this.container = container; 
 	
@@ -63,6 +63,7 @@ var sideMenuView = function(container, model){
 		
 		if (arg == "newGuestNumber"){
 			this.numberOfGuests.html(model.getNumberOfGuests());
+			this.updateTable();
 		}
 		if (arg == "newMenu"){
 			this.updateTable();

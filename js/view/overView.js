@@ -1,4 +1,4 @@
-var overView = function(container, model){
+var OverView = function(container, model){
 	
 	this.container = container; 
 	

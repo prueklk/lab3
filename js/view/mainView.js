@@ -1,4 +1,4 @@
-var mainView = function(container, model){
+var MainView = function(container, model){
 	
 	this.container = container; 
 	

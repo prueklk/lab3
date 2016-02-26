@@ -4,25 +4,25 @@ $(function() {
 	
 	//And create the needed controllers and views
 	
-	var OverallStateView = new overallStateView ($("#overallStateView"), model);
-	var overallStateCtrl = new OverallStateCtrl (OverallStateView, model);
+	//var OverallStateView = new overallStateView ($("#overallStateView"), model);
+	//var overallStateCtrl = new OverallStateCtrl (model);
 	
-	var IndexView = new indexView ($("#indexView"), model);
-	var IndexCtrl = new indexCtrl(IndexView, model);
+	var indexView = new IndexView ($("#indexView"), model);
+	var indexCtrl = new IndexCtrl(indexView, model);
 	
-	var SideMenuView = new sideMenuView($("#sideMenu"), model);
-	var SideMenuViewCtrl = new sideMenuViewCtrl(SideMenuView,model);
+	var sideMenuView = new SideMenuView($("#sideMenu"), model);
+	var sideMenuViewCtrl = new SideMenuViewCtrl(sideMenuView,model);
 	
-	var MainView = new mainView($("#mainView"), model);
-	var MainViewCtrl = new mainViewCtrl(MainView,model);
+	var mainView = new MainView($("#mainView"), model);
+	var mainViewCtrl = new MainViewCtrl(mainView,model);
 	
-	var SelectedDishView = new selectedDishView($("#selectedDishView"), model);
-	var SelectedDishViewCtrl = new selectedDishViewCtrl(SelectedDishView, model);
+	var selectedDishView = new SelectedDishView($("#selectedDishView"), model);
+	var selectedDishViewCtrl = new SelectedDishViewCtrl(selectedDishView, model);
 	
-	var OverView = new overView($("#overView"), model);
-	var OverViewCtrl = new overViewCtrl(OverView,model);
+	var overView = new OverView($("#overView"), model);
+	var overViewCtrl = new OverViewCtrl(overView,model);
 	
-	var InstructionView = new instructionView($("#instructionView"), model);
-	var InstructionViewCtrl = new instructionViewCtrl(InstructionView,model);
+	var instructionView = new InstructionView($("#instructionView"), model);
+	var instructionViewCtrl = new InstructionViewCtrl(instructionView,model);
 	
 });

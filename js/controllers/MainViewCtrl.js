@@ -1,4 +1,4 @@
-var mainViewCtrl = function(view, model) {
+var MainViewCtrl = function(view, model) {
 	
 	foodDrop.onchange = function(){
 		console.log("foodDrop.onchange");
