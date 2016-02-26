@@ -68,6 +68,10 @@ var instructionView = function(container, model){
 	this.update = function(model, arg) {
 		//console.log("UPDATE instructionView // arg = "+arg);
 		addInstructionText();
+		
+		if (arg == "newGuestNumber"){
+			this.numberOfGuests.html(model.getNumberOfGuests());
+		}
 
 	}
 	

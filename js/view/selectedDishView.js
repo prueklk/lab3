@@ -6,24 +6,35 @@ var selectedDishView = function(container, model){
 	
 	textString += "<div id=\"dishDetails\">"+
 			"<div id=\"selectedDishDetails\" class=\"col-md-5\">"+
+			//<button class="btn" id="backButton">Back to Select Dish</button>+
+			"</div>"+"<div id=\"ingredientsBox\" class=\"col-md-4\">"+
+			'<div id="tableHead"></div>'+
+			'<div><table id="tableContent" class="table">'+
+				'</tbody><tfoot>'+
+				"<tr><td>Total cost</td>"+
+				"<td></td>"+
+				"<td>SEK</td>"+
+				"<td id=\"totalCostTwo\">"+"</td>"+
+				"</tr></tfoot></table>"+
 			"</div>"+
-			"<div id=\"ingredientsBox\" class=\"col-md-4\">"+
-			"</div>"+
+			"<div id=\"buttonDiv\" class=\"col-md-4\">"+"<button class=\"btn\" id=\"confirmDish\">Confirm Dish</button>"+"</div>"+
+			"</div>"+"</div>"+
 			"<div id=\"preparation\" class=\"col-md-9 col-md-offset-3\">"+
 				"<h2>Preparation</h2>"+
 				"<div id=\"prepDiv\">"+
 				"</div>"+
-			"</div>"+
 		"</div>"
 		
 	container.html(textString);
 	
-
-	this.confirmDish = container.find("#confirmDish");
-	this.backButton = container.find("#backButton");
 	
 	this.numberOfGuests = container.find("#numberOfGuests");
 	this.numberOfGuests.html(model.getNumberOfGuests()+" people");
+	
+	this.confirmDish = container.find("#confirmDish");
+	this.backButton = container.find("#backButton");
+	this.tableContent = container.find("#tableContent");
+	this.totalCostTwo = container.find("#totalCostTwo");
 	
 	var dishInfo = function(){
 		
@@ -45,15 +56,16 @@ var selectedDishView = function(container, model){
 		this.prepDiv.html("<p>"+pickedFood.description);
 
 
-		this.ingredientsBox = container.find("#ingredientsBox");
+		//this.ingredientsBox = container.find("#ingredientsBox");
 		this.totalPriceIngr = container.find("#totalCostIngr");
 		
 		var ingredientList = model.getDishIngredients(dishId);
-		var ingredientTxt = '<h4>Ingredients for '+model.getNumberOfGuests()+' people</h4><div><table class="table"><tbody>';
+		var ingredientTxt = '';
+		var tableHeader = '<h4>Ingredients for '+model.getNumberOfGuests()+' people</h4>';
 		
 		for (var i=0 ;  i < ingredientList.length ; i++ ){
 		
-			ingredientTxt += "<tr>"+
+			ingredientTxt += '<tbody>'+"<tr>"+
 						"<td>"+ingredientList[i].quantity*model.getNumberOfGuests() + ingredientList[i].unit+"</td>"+
 						"<td>"+ingredientList[i].name+"</td>"+
 						"<td>SEK</td>"+
@@ -61,18 +73,24 @@ var selectedDishView = function(container, model){
 						"</tr>";
 		}
 
-		ingredientTxt += '</tbody><tfoot>'+
-						'<tr><td><button class="btn" id="confirmDish">Confirm Dish</button></td>'+
-						"<td></td>"+
-						"<td>SEK</td>"+
-						"<td>"+model.getFoodPrice(dishId)*model.getNumberOfGuests()+"</td>"+
-						"</tr></tfoot></table>";
+		 ingredientTxt += '</tbody><tfoot>'+
+						 "<tr><td>Total cost</td>"+
+						 "<td></td>"+
+						 "<td>SEK</td>"+
+						 "<td>"+model.getFoodPrice(dishId)*model.getNumberOfGuests()+"</td>"+
+						 "</tr></tfoot></table>";
 		
 		
 		//this.totalPriceIngr.html(model.getFoodPrice(dishId));
-
-		this.ingredientsBox.html(ingredientTxt);
+		this.tableRows = container.find("#tableContent");
+		this.tableCost = container.find("#totalCostTwo");
+		this.tableHead = container.find("#tableHead");
 		
+		this.tableHead.html(tableHeader); 
+		this.tableRows.html(ingredientTxt);
+		this.tableCost.html(model.getFoodPrice(dishId)*model.getNumberOfGuests());
+		//this.tablePeople = container.find("#h4num");
+		//this.tablePeople.html = ('Ingredients for'+model.getNumberOfGuests()+'people');
 	}
 	
 	this.update = function(model, arg) {

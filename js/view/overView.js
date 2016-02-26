@@ -59,6 +59,10 @@ var overView = function(container, model){
 		//console.log("UPDATE overView // arg = "+arg);
 
 		addOverviewText();
+		
+		if (arg == "newGuestNumber"){
+			this.numberOfGuests.html(model.getNumberOfGuests());
+		}
 	}
 	
 	//console.log("this.addObserver = overView");
