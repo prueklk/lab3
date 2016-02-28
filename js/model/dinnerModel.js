@@ -106,6 +106,10 @@ var DinnerModel = function() {
 		//TODO Lab 2
 	}
 
+	this.getFullMenuBefore = function(){
+		return dishes;
+	}
+
 	this.getDishIngredients = function(id){
 		var dish = this.getDish(id);
 		return dish.ingredients;

@@ -1,10 +1,4 @@
 var SideMenuViewCtrl = function(view, model) {
- 
- 	console.log(this);
- 	console.log(view);
- 	console.log(view.plusButton);
- 	console.log("confirmDinner");
- 	console.log(view.confirmDinner);
 
 	view.plusButton.click(function(){
 		model.setNumberOfGuests(1);
