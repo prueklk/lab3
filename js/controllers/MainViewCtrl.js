@@ -1,8 +1,10 @@
 var MainViewCtrl = function(view, model) {
 	
 	searchButton.onclick = function(){
+		//console.log("searchButton");
 		var string = searchValue.value;
 		var menu = model.getFullMenuBefore();
+		//console.log(menu);
 		for(var i = 0; i < menu.length ; i++){
 			if (string == menu[i].name){
 
@@ -21,9 +23,25 @@ var MainViewCtrl = function(view, model) {
 				view.foodDetail.html(foodInfo);
 
 				for (var j=0; j<view.foodBtnId.length;j++){
-				view.foodBtnArr.push(view.container.find("#"+view.foodBtnId[j]));
+					view.foodBtnArr.push(view.container.find("#"+view.foodBtnId[j]));
 				}
-			}
+
+				//console.log(view.foodBtnArr);
+				for(var i=0;i<view.foodBtnArr.length;i++){
+				// console.log("in i = "+view.foodBtnArr[i]);
+					for(var j=0;j<view.foodBtnArr[i].length; j++){
+				  		view.foodBtnArr[i][j].onclick = function(){
+				  			//console.log(this.id);
+			  				model.addPicId(this.id);
+
+							overallStateCtrl.mainView.container.hide();
+							overallStateCtrl.selectedDishView.container.show();
+						}
+					}
+		  		}
+
+
+		 	}
 			else{
 				
 			}
