@@ -32,7 +32,6 @@ var SideMenuView = function(container, model){
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	
 	this.updateTable = function(){
-	
 		var fullMenu = model.getFullMenu();
 		var menuListTxt = '<table class="table">'+
 							'<thead><tr>'+

@@ -180,7 +180,7 @@ var DinnerModel = function() {
 				
 				//console.log("selectedMenu.length = "+selectedMenu.length);
 
-				if(selectedMenu.length != 0){ //check if selectedMenu is empty or not
+				if(selectedMenu.length > 0){ //check if selectedMenu is empty or not
 					for (var j=0; j<selectedMenu.length ; j++){
 					 	if(selectedMenu[j].id == dishes[i].id){	//check if the new dish is duplicate
 					 		selectedMenu.splice(j, 1); //if so, remove that dish
@@ -213,8 +213,7 @@ var DinnerModel = function() {
 				selectedMenu.splice(i, 1);
 				this.notifyObservers("dishRemoved");
 			}else{
-				return false;
-	
+				
 			}
 		}
 		
