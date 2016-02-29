@@ -188,14 +188,12 @@ var DinnerModel = function() {
 					 	//console.log("dishes[i].name = "+dishes[i].name);
 					 	selectedMenu.push(dishes[i]); //add the new dish
 
-					 	console.log("selectedMenu.length = "+selectedMenu.length);
 					 	this.notifyObservers("newMenu");
 						return selectedMenu;
 					}
 				} else{
 					//console.log("dishes[i].name = "+dishes[i].name);
 					selectedMenu.push(dishes[i]); //add the new dish 
-					console.log("selectedMenu.length = "+selectedMenu.length);
 					this.notifyObservers("newMenu");
 					return selectedMenu;
 				
@@ -213,9 +211,8 @@ var DinnerModel = function() {
 		for (var i=0 ; i < selectedMenu.length ; i++){
 			if (selectedMenu[i].id == id){
 				selectedMenu.splice(i, 1);
-				this.notifyObservers();
+				this.notifyObservers("dishRemoved");
 			}else{
-				this.notifyObservers();
 				return false;
 	
 			}

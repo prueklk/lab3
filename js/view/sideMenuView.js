@@ -45,7 +45,8 @@ var SideMenuView = function(container, model){
 
 			menuListTxt += 	'<tr class="costColor"><td>'+fullMenu[i].name+"</td>"+
 						"<td>SEK </td>" + 
-						"<td>"+fullPrice+"</td></tr>";	
+						"<td>"+fullPrice+"</td>"+
+						"<td><button id='"+fullMenu[i].id+"'>Delete</button></td></tr>";	
 		}
 
 		menuListTxt += '</tbody><tfoot><tr>'+
@@ -55,7 +56,7 @@ var SideMenuView = function(container, model){
 
 		this.menuList.html(menuListTxt);
 	}
-	
+
 	this.updateTable();
 	
 	this.update = function(model, arg) {
@@ -68,6 +69,10 @@ var SideMenuView = function(container, model){
 		if (arg == "newMenu"){
 			this.updateTable();
 		}
+		if (arg == "dishRemoved"){
+			this.updateTable();
+		}
+
 	}
 
 	//console.log("this.addObserver = sideMenuView");
