@@ -1,14 +1,14 @@
-var mainView = function(container, model){
+var MainView = function(container, model){
 	
 	this.container = container; 
 	
 	string = "";
 	
-	string += "<div class=\"col-md-10\" id=\"picBox\">"+
+	string += "<div id=\"picBox\">"+
 			"<div id=\"dishDiv\">"+
 				"<h4>Select dish:</h4>"+
 				"<hr class=\"blackLine\">"+
-				"<span><input type=\"text\" placeholder=\"Enter key words\" id=\"selsectedDish\">"+
+				"<span><input type=\"text\" placeholder=\"Enter key words\" id=\"searchValue\">"+
 				"<button class=\"btn\" id=\"searchButton\">Search</button></span>"+
  				"<select id=\"foodDrop\">"+
 				"</select>"+
@@ -23,6 +23,9 @@ var mainView = function(container, model){
 	
 	this.foodDrop = container.find('#foodDrop');
 	this.foodDetail = container.find('#foodDetail');
+	this.searchButton = container.find("#searchButton");
+	this.searchValue = container.find("#searchValue");
+
 	
 	var foodDropListTxt = "";
 		
@@ -33,8 +36,6 @@ var mainView = function(container, model){
 							
 	this.foodDrop.html(foodDropListTxt);
 		
-	
-	
 	
 	this.updateType = function(type){
 		
@@ -67,17 +68,17 @@ var mainView = function(container, model){
 		}
 		//console.log(this.foodBtnArr);
 
-		 for(var k=0;k<this.foodBtnArr.length;k++){
-		 	//console.log(this.foodBtnArr[k]);
+		 // for(var k=0;k<this.foodBtnArr.length;k++){
+		 // 	//console.log(this.foodBtnArr[k]);
 		 	
-			 for(var l=0;l<this.foodBtnArr[k].length; l++){
-		 	 	//console.log(this.foodBtnArr[k][l]);
-	   			this.foodBtnArr[k][l].onclick = function(){
-	    			//console.log(this.id);//food id
-					model.addPicId(this.id);
-	    		}
-	  		}	
-		 }
+			//  for(var l=0;l<this.foodBtnArr[k].length; l++){
+		 // 	 	//console.log(this.foodBtnArr[k][l]);
+	  //  			this.foodBtnArr[k][l].onclick = function(){
+	  //   			//console.log(this.id);//food id
+			// 		model.addPicId(this.id);
+	  //   		}
+	  // 		}	
+		 // }
 
 
 	}
@@ -92,6 +93,7 @@ var mainView = function(container, model){
 		if (arg == "starter" || arg == "main dish" || arg == "dessert"){
 			this.updateType(arg);
 		}
+		
 	}
 	
 	//console.log("this.addObserver = mainView");

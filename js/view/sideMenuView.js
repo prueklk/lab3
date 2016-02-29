@@ -1,10 +1,9 @@
-var sideMenuView = function(container, model){
-	
+var SideMenuView = function(container, model){
 	this.container = container; 
 	
 	string = "";
 	
-	string += "<div id=\"exampleView\">"+
+	string += "<div class=\"blackBorder\">"+
 			"<div>"+
 				"<h4>My dinner</h4>"+
 				"<p>People: <span id=\"numberOfGuests\"/></span></p>"+
@@ -17,7 +16,7 @@ var sideMenuView = function(container, model){
 				"<div id=\"menuList\">"+
 				"</div>"+
 			"</div>"+
-			"<button id=\"#confirmButton\" class=\"btn\">Confirm Dinner</button>"+
+			"<button id=\"confirmButton\" class=\"btn\">Confirm Dinner</button>"+
 		"</div>";
 		
 	container.html(string);
@@ -27,12 +26,12 @@ var sideMenuView = function(container, model){
 	this.minusButton = container.find("#minusGuest");
 	this.confirmDinner = container.find("#confirmButton");
 
+
 	this.menuList = container.find("#menuList");
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	
 	this.updateTable = function(){
-	
 		var fullMenu = model.getFullMenu();
 		var menuListTxt = '<table class="table">'+
 							'<thead><tr>'+
@@ -45,7 +44,8 @@ var sideMenuView = function(container, model){
 
 			menuListTxt += 	'<tr class="costColor"><td>'+fullMenu[i].name+"</td>"+
 						"<td>SEK </td>" + 
-						"<td>"+fullPrice+"</td></tr>";	
+						"<td>"+fullPrice+"</td>"+
+						"<td><button id='"+fullMenu[i].id+"'>Delete</button></td></tr>";	
 		}
 
 		menuListTxt += '</tbody><tfoot><tr>'+
@@ -55,7 +55,7 @@ var sideMenuView = function(container, model){
 
 		this.menuList.html(menuListTxt);
 	}
-	
+
 	this.updateTable();
 	
 	this.update = function(model, arg) {
@@ -63,10 +63,15 @@ var sideMenuView = function(container, model){
 		
 		if (arg == "newGuestNumber"){
 			this.numberOfGuests.html(model.getNumberOfGuests());
+			this.updateTable();
 		}
 		if (arg == "newMenu"){
 			this.updateTable();
 		}
+		if (arg == "dishRemoved"){
+			this.updateTable();
+		}
+
 	}
 
 	//console.log("this.addObserver = sideMenuView");

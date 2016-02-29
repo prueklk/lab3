@@ -1,7 +1,7 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
 	
-	var selectedMenu = [];
+
 	// var selectedMenu = [{ // FOR TESTING
 		// 'id':1,
 		// 'name':'French toast',
@@ -60,7 +60,9 @@ var DinnerModel = function() {
 		
 	var guest = 0;
 	
-	var selectedDish = [];
+	var selectedMenu = [];
+
+	var selectedDish = 0;
 
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
@@ -104,6 +106,10 @@ var DinnerModel = function() {
 		return selectedMenu;
 
 		//TODO Lab 2
+	}
+
+	this.getFullMenuBefore = function(){
+		return dishes;
 	}
 
 	this.getDishIngredients = function(id){
@@ -171,49 +177,38 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		for (var i=0 ;  i < dishes.length ; i++ ){
-			if(dishes[i].id == id){
+
+		for (var i=0 ;  i < selectedMenu.length ; i++ ){
+
+			if(this.getDish(id).type == selectedMenu[i].type){
 				
 				//console.log("selectedMenu.length = "+selectedMenu.length);
 
-				if(selectedMenu.length != 0){ //check if selectedMenu is empty or not
-					for (var j=0; j<selectedMenu.length ; j++){
-					 	if(selectedMenu[j].id == dishes[i].id){	//check if the new dish is duplicate
-					 		selectedMenu.splice(j, 1); //if so, remove that dish
+				 //check if selectedMenu is empty or not
+					 	//check if the new dish is duplicate
+					 		selectedMenu.splice(i, 1); //if so, remove that dish
 					 	}
+					 }
 					 	//console.log("dishes[i].name = "+dishes[i].name);
-					 	selectedMenu.push(dishes[i]); //add the new dish
+					 	selectedMenu.push(this.getDish(id)); //add the new dish
 
-					 	console.log("selectedMenu.length = "+selectedMenu.length);
 					 	this.notifyObservers("newMenu");
 						return selectedMenu;
-					}
-				} else{
-					//console.log("dishes[i].name = "+dishes[i].name);
-					selectedMenu.push(dishes[i]); //add the new dish 
-					console.log("selectedMenu.length = "+selectedMenu.length);
-					this.notifyObservers("newMenu");
-					return selectedMenu;
-				
-				}
+					console.log("hello");
 
 				//selectedMenu.push(dishes[i]);
 				//return selectedMenu;
 			}
-		}
 		//TODO Lab 2
-	}
 
 	//Removes dish from menu - NOT SURE IT IS WORKING CORRECT!
 	this.removeDishFromMenu = function(id) {
 		for (var i=0 ; i < selectedMenu.length ; i++){
 			if (selectedMenu[i].id == id){
 				selectedMenu.splice(i, 1);
-				this.notifyObservers();
+				this.notifyObservers("dishRemoved");
 			}else{
-				this.notifyObservers();
-				return false;
-	
+
 			}
 		}
 		
@@ -244,15 +239,12 @@ var DinnerModel = function() {
 	
 	//function that returns the ID from the picture that is clicked in mainView
 	this.addPicId = function(id){
-		selectedDish = [];
-		selectedDish.push(id);
+		selectedDish = id;
 		this.notifyObservers("newPicId");
 	}
 	
 	this.getPicId = function(){
-		for (i in selectedDish){
-			return selectedDish[i];
-		}
+		return selectedDish;
 	}
 
 	//function that returns a dish of specific ID - WORKING!!

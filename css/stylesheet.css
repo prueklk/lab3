@@ -39,7 +39,7 @@ h1{
 }
 
 #indexBox{
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 1);
 	position: relative;
 	left: 0px;
 	width: 500px;
@@ -55,11 +55,6 @@ h1{
 }
 
 
-#exampleView{
-	border: 2px solid black;
-	padding: 10px;
-}
-
 #dishDiv{
 	border: 2px solid black;
 	background-color: rgba(255, 255, 102, 0.5);
@@ -72,7 +67,7 @@ h1{
 	/*border: 2px solid black;*/
 	background-color: white;
 	margin: 0px;
-	padding: 0px;
+	padding: 10px;
 }
 
 .costColor{
@@ -89,6 +84,7 @@ h1{
 #ingredientsBox{
 	background-color: rgba(255, 255, 102, 0.5);
 	border: 2px solid black;
+	padding: 10px;
 }
 
 #dinnerOverview{
@@ -109,10 +105,6 @@ img{
 	margin: 10px;
 }
 
-#overviewPics{
-	margin: 10px;
-}
-
 .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
@@ -126,4 +118,20 @@ img{
     margin-right:auto;
 }
 
+.whiteDiv{
+	background-color: white;
+}
 
+.blackBorder{
+	border: 2px solid black;
+	padding: 10px;
+}
+
+#dishDetails{
+	padding-right:15px;
+    padding-left:15px;
+}
+
+.imgInstruction{
+	padding: 10px;
+}

@@ -1,7 +1,15 @@
-var indexCtrl = function(view, model) {
+var IndexCtrl = function(view, model) {
 
-	//createDinner.onclick = function(){
-		//view.container.hide();
-	//}	
+	//console.log("IndexCtrl");
+
+	createDinner.onclick = function(){
+		// console.log("onclick");
+		// console.log(this);
+		// console.log(overallStateCtrl);
+
+		overallStateCtrl.indexView.container.hide();
+		overallStateCtrl.sideMenuView.container.show();
+		overallStateCtrl.mainView.container.show();
+	}	
 
 }
