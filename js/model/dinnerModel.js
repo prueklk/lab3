@@ -185,13 +185,17 @@ var DinnerModel = function() {
 					 	if(selectedMenu[j].id == dishes[i].id){	//check if the new dish is duplicate
 					 		selectedMenu.splice(j, 1); //if so, remove that dish
 					 	}
-					 	//console.log("dishes[i].name = "+dishes[i].name);
-					 	selectedMenu.push(dishes[i]); //add the new dish
-
-					 	this.notifyObservers("newMenu");
-						return selectedMenu;
 					}
+
+					console.log("selectedMenu.length > 0");
+					console.log("dishes[i].name = "+dishes[i].name);
+					selectedMenu.push(dishes[i]); //add the new dish
+
+					this.notifyObservers("newMenu");
+					return selectedMenu;
+					
 				} else{
+					//console.log("selectedMenu.length else");
 					//console.log("dishes[i].name = "+dishes[i].name);
 					selectedMenu.push(dishes[i]); //add the new dish 
 					this.notifyObservers("newMenu");
@@ -212,8 +216,7 @@ var DinnerModel = function() {
 			if (selectedMenu[i].id == id){
 				selectedMenu.splice(i, 1);
 				this.notifyObservers("dishRemoved");
-			}else{
-				
+				return selectedMenu;
 			}
 		}
 		
